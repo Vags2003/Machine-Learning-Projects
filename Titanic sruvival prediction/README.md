@@ -1,93 +1,49 @@
-# Titanic Survival Prediction Using Machine Learning
+# Titanic Survival Prediction using Logistic Regression
 
-This project aims to predict whether a passenger on the Titanic survived or not using machine learning algorithms. The dataset used includes features such as age, sex, passenger class, and fare, which are used to predict survival.
+This project aims to predict the survival of passengers aboard the Titanic using the Logistic Regression algorithm. The model is trained on passenger data, including features such as age, sex, and ticket class, to determine whether a passenger survived or not.
 
-## Table of Contents
+## Overview
+> The Titanic disaster, one of the deadliest maritime tragedies in history, has been the subject of various analyses. This project uses machine learning to predict whether a passenger survived or not based on available demographic and ticket-related features. The Logistic Regression algorithm is employed to classify the survival outcome, using historical data of Titanic passengers.
 
-- [Project Description](#project-description)
-- [Data Description](#data-description)
-- [Libraries Used](#libraries-used)
-- [Model Building](#model-building)
-- [Results](#results)
-- [How to Run the Code](#how-to-run-the-code)
+## Dataset
+> The dataset used in this project is from Kaggle’s Titanic competition:
+[Titanic - Machine Learning from Disaster](https://www.kaggle.com/c/titanic/data)
 
-## Project Description
+The dataset contains information about passengers aboard the Titanic, including demographic data and other characteristics. Key features include:
 
-In this project, we predict the survival status of passengers aboard the Titanic using various machine learning algorithms. The project involves:
-- Exploring the dataset with visualizations and summary statistics.
-- Preprocessing the data by handling missing values and performing feature engineering.
-- Training several models including **Logistic Regression**, **Random Forest**, **XGBoost**, **LightGBM**, and **Decision Tree** classifiers.
-- Evaluating the models' performance using accuracy, cross-validation, and confusion matrix.
-
-The objective of this project is to build a predictive model that can accurately predict whether a passenger survived the Titanic disaster based on available features.
-
-## Data Description
-
-The Titanic dataset consists of the following features:
-
-- **PassengerId**: Unique ID for each passenger
-- **Pclass**: Passenger class (1 = 1st, 2 = 2nd, 3 = 3rd)
-- **Name**: Passenger's name
+- **Pclass**: Passenger class (1, 2, or 3)
 - **Sex**: Gender of the passenger
 - **Age**: Age of the passenger
-- **SibSp**: Number of siblings or spouses aboard
-- **Parch**: Number of parents or children aboard
-- **Fare**: Fare paid by the passenger
-- **Embarked**: Port of Embarkation (C = Cherbourg; Q = Queenstown; S = Southampton)
-- **Cabin**: Cabin number
-- **Ticket**: Ticket number
-- **Survived**: Survival status (0 = No, 1 = Yes)
+- **SibSp**: Number of siblings/spouses aboard
+- **Parch**: Number of parents/children aboard
+- **Fare**: The fare the passenger paid for the ticket
+- **Embarked**: The port of embarkation (C = Cherbourg; Q = Queenstown; S = Southampton)
+- **Survived**: Whether the passenger survived (1) or not (0)
 
-## Libraries Used
+## Model
+> The Logistic Regression algorithm is used in this project to predict the survival of Titanic passengers. Logistic Regression is a linear model used for binary classification problems, making it suitable for this task (survived or not). The model predicts the probability of survival based on the features provided.
 
-The following Python libraries are used in the project:
+> Key steps:
+1. **Data preprocessing**: Handling missing values, encoding categorical variables, and feature scaling.
+2. **Feature engineering**: Transforming features like `Fare` to improve the model's performance.
+3. **Splitting the dataset**: Dividing the dataset into training and testing sets.
+4. **Training the model**: Using Logistic Regression to train on the training data.
+5. **Model evaluation**: Using accuracy as the evaluation metric to assess model performance.
 
-- **pandas**: For data manipulation and analysis
-- **numpy**: For numerical computing
-- **matplotlib** & **seaborn**: For data visualization
-- **scikit-learn**: For machine learning algorithms and model evaluation
-- **xgboost**: For the XGBoost classifier
-- **lightgbm**: For the LightGBM classifier
-
-## Model Building
-
-The following models are built and evaluated for Titanic survival prediction:
-
-1. **Logistic Regression**: A statistical model used for binary classification tasks.
-2. **Decision Tree Classifier**: A model that splits the data into subsets based on feature values.
-3. **Random Forest Classifier**: An ensemble method using multiple decision trees for better generalization.
-4. **XGBoost**: A gradient boosting model known for high accuracy and efficiency.
-5. **LightGBM**: Another gradient boosting model, optimized for speed and efficiency.
+## Technologies Used
+> **Python**: For data analysis, preprocessing, and building the model.  
+> **Logistic Regression**: For classification.  
+> **Pandas**: For data manipulation and analysis.  
+> **Scikit-learn**: For machine learning algorithms, model training, and evaluation.  
+> **NumPy**: For numerical operations.  
+> **Matplotlib** and **Seaborn**: For data visualization.
 
 ## Results
+> The Logistic Regression model achieved an accuracy of **81.11%** on the test data. Below are the evaluation metrics:
 
-The models were evaluated using accuracy, cross-validation scores, and confusion matrix. The **Random Forest** model provided the best performance with an accuracy of around 81.6% and a cross-validation score of 80.7%.
+- **Accuracy**: 81.11%
+- **Precision**: 78.6%
+- **Recall**: 83.4%
+- **F1 Score**: 80.0%
 
-### Model Performance:
-
-- **Decision Tree Classifier**:
-  - Accuracy: 77.6%
-  - CV Score: 76.6%
-  
-- **LightGBM Classifier**:
-  - Accuracy: 80.7%
-
-- **XGBoost Classifier**:
-  - Accuracy: 80.3%
-  - CV Score: 81.3%
-  
-- **Random Forest Classifier**:
-  - Accuracy: 81.6%
-  - CV Score: 80.7%
-  
-- **Logistic Regression**:
-  - Accuracy: 81.2%
-  - CV Score: 78.3%
-
-## How to Run the Code
-
-### 1. Clone this repository:
-
-```bash
-git clone https://github.com/yourusername/titanic-survival-prediction.git
-cd titanic-survival-prediction
+> The model was able to correctly classify the survival of passengers with a high degree of accuracy, making it a viable tool for predictions in similar scenarios.
